@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'orders_app',
+
 ]
 
 MIDDLEWARE = [
@@ -47,6 +49,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'django.middleware.locale.LocaleMiddleware'
 ]
 
 ROOT_URLCONF = 'crm1_service.urls'
@@ -75,8 +79,13 @@ WSGI_APPLICATION = 'crm1_service.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'crm1_db',
+        'USER': 'yaroslavatlivankin',
+        'PASSWORD': '0104054',
+        'HOST': 'localhost',
+        'PORT': '5432',
+
     }
 }
 
